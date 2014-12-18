@@ -5,3 +5,12 @@
  */
 
 include_once 'gsb_feature_alumni_reunion_agenda_item_display.features.inc';
+
+/**
+ * Implementation of hook_views_query_alter
+ * @param type $view
+ * @param type $query
+ */
+function gsb_feature_alumni_reunion_agenda_item_display_views_query_alter(&$view, &$query) {
+
+}
