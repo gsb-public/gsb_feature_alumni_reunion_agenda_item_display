@@ -39,18 +39,6 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Relationship: Ref to Alumni Reunion Session */
-  $handler->display->display_options['relationships']['field_reunion_session_ref_target_id']['id'] = 'field_reunion_session_ref_target_id';
-  $handler->display->display_options['relationships']['field_reunion_session_ref_target_id']['table'] = 'field_data_field_reunion_session_ref';
-  $handler->display->display_options['relationships']['field_reunion_session_ref_target_id']['field'] = 'field_reunion_session_ref_target_id';
-  $handler->display->display_options['relationships']['field_reunion_session_ref_target_id']['ui_name'] = 'Ref to Alumni Reunion Session';
-  $handler->display->display_options['relationships']['field_reunion_session_ref_target_id']['label'] = 'Content Entity Reference - Reunion Session';
-  /* Relationship: Ref to Alumni Reunion Group Page */
-  $handler->display->display_options['relationships']['field_reunion_group_page_ref_target_id']['id'] = 'field_reunion_group_page_ref_target_id';
-  $handler->display->display_options['relationships']['field_reunion_group_page_ref_target_id']['table'] = 'field_data_field_reunion_group_page_ref';
-  $handler->display->display_options['relationships']['field_reunion_group_page_ref_target_id']['field'] = 'field_reunion_group_page_ref_target_id';
-  $handler->display->display_options['relationships']['field_reunion_group_page_ref_target_id']['ui_name'] = 'Ref to Alumni Reunion Group Page';
-  $handler->display->display_options['relationships']['field_reunion_group_page_ref_target_id']['label'] = 'Content Entity Reference - Reunion Group Page';
   /* Field: Event Date: Date */
   $handler->display->display_options['fields']['field_event_date_1']['id'] = 'field_event_date_1';
   $handler->display->display_options['fields']['field_event_date_1']['table'] = 'field_data_field_event_date';
@@ -72,39 +60,6 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_event_date_1']['delta_offset'] = '0';
-  /* Field: Agenda Item - Reunion Session Ref */
-  $handler->display->display_options['fields']['field_alumni_session_ref']['id'] = 'field_alumni_session_ref';
-  $handler->display->display_options['fields']['field_alumni_session_ref']['table'] = 'field_data_field_alumni_session_ref';
-  $handler->display->display_options['fields']['field_alumni_session_ref']['field'] = 'field_alumni_session_ref';
-  $handler->display->display_options['fields']['field_alumni_session_ref']['ui_name'] = 'Agenda Item - Reunion Session Ref';
-  $handler->display->display_options['fields']['field_alumni_session_ref']['label'] = '';
-  $handler->display->display_options['fields']['field_alumni_session_ref']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_alumni_session_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_alumni_session_ref']['settings'] = array(
-    'link' => 0,
-    'conditions' => array(
-      0 => array(
-        'condition' => '',
-      ),
-    ),
-  );
-  /* Field: Group Page - Reunion Session Ref */
-  $handler->display->display_options['fields']['field_reunion_session_ref']['id'] = 'field_reunion_session_ref';
-  $handler->display->display_options['fields']['field_reunion_session_ref']['table'] = 'field_data_field_reunion_session_ref';
-  $handler->display->display_options['fields']['field_reunion_session_ref']['field'] = 'field_reunion_session_ref';
-  $handler->display->display_options['fields']['field_reunion_session_ref']['relationship'] = 'field_reunion_group_page_ref_target_id';
-  $handler->display->display_options['fields']['field_reunion_session_ref']['ui_name'] = 'Group Page - Reunion Session Ref';
-  $handler->display->display_options['fields']['field_reunion_session_ref']['label'] = '';
-  $handler->display->display_options['fields']['field_reunion_session_ref']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_reunion_session_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reunion_session_ref']['settings'] = array(
-    'link' => 0,
-    'conditions' => array(
-      0 => array(
-        'condition' => '',
-      ),
-    ),
-  );
   /* Sort criterion: Content: Date/Time */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
@@ -127,7 +82,6 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
   $handler->display->display_options['arguments']['field_reunion_group_page_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_reunion_group_page_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_reunion_group_page_ref_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -147,33 +101,21 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
     'alumni_reunion_agenda_item' => 'alumni_reunion_agenda_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Reunion Session (field_reunion_session_ref) */
-  $handler->display->display_options['filters']['field_reunion_session_ref_target_id']['id'] = 'field_reunion_session_ref_target_id';
-  $handler->display->display_options['filters']['field_reunion_session_ref_target_id']['table'] = 'field_data_field_reunion_session_ref';
-  $handler->display->display_options['filters']['field_reunion_session_ref_target_id']['field'] = 'field_reunion_session_ref_target_id';
-  $handler->display->display_options['filters']['field_reunion_session_ref_target_id']['relationship'] = 'field_reunion_group_page_ref_target_id';
-  $handler->display->display_options['filters']['field_reunion_session_ref_target_id']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_reunion_session_ref_target_id']['group'] = 1;
-  /* Filter criterion: Global: Fields comparison */
-  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
-  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
-  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
-  $handler->display->display_options['filters']['fields_compare']['group'] = 1;
-  $handler->display->display_options['filters']['fields_compare']['right_field'] = 'field_alumni_session_ref';
-  $handler->display->display_options['filters']['fields_compare']['left_field'] = 'field_reunion_session_ref';
-  /* Filter criterion: Global: Fields comparison */
-  $handler->display->display_options['filters']['fields_compare_1']['id'] = 'fields_compare_1';
-  $handler->display->display_options['filters']['fields_compare_1']['table'] = 'views';
-  $handler->display->display_options['filters']['fields_compare_1']['field'] = 'fields_compare';
-  $handler->display->display_options['filters']['fields_compare_1']['group'] = 2;
-  $handler->display->display_options['filters']['fields_compare_1']['right_field'] = 'field_reunion_session_ref';
-  $handler->display->display_options['filters']['fields_compare_1']['left_field'] = 'field_alumni_session_ref';
+  /* Filter criterion: Content: Exclusive to (field_reunion_group_page_ref) */
+  $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id_1']['id'] = 'field_reunion_group_page_ref_target_id_1';
+  $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id_1']['table'] = 'field_data_field_reunion_group_page_ref';
+  $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id_1']['field'] = 'field_reunion_group_page_ref_target_id';
+  $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id_1']['group'] = 2;
   /* Filter criterion: Content: Exclusive to (field_reunion_group_page_ref) */
   $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id']['id'] = 'field_reunion_group_page_ref_target_id';
   $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id']['table'] = 'field_data_field_reunion_group_page_ref';
   $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id']['field'] = 'field_reunion_group_page_ref_target_id';
   $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_reunion_group_page_ref_target_id']['group'] = 2;
+  /* Filter criterion: Content: Alumni Reunion Session (field_alumni_session_ref) */
+  $handler->display->display_options['filters']['field_alumni_session_ref_target_id']['id'] = 'field_alumni_session_ref_target_id';
+  $handler->display->display_options['filters']['field_alumni_session_ref_target_id']['table'] = 'field_data_field_alumni_session_ref';
+  $handler->display->display_options['filters']['field_alumni_session_ref_target_id']['field'] = 'field_alumni_session_ref_target_id';
 
   /* Display: Reunion Schedule */
   $handler = $view->new_display('panel_pane', 'Reunion Schedule', 'panel_pane_1');
@@ -181,13 +123,21 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
-    'nid' => array(
-      'type' => 'context',
-      'context' => 'node_edit_form.nid',
+    'field_reunion_group_page_ref_target_id' => array(
+      'type' => 'none',
+      'context' => 'entity:field_collection_item.archived',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Content: Nid',
+      'label' => 'Content: Exclusive to (field_reunion_group_page_ref)',
+    ),
+    'field_reunion_session_ref_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:node.field-reunion-session-ref',
+      'context_optional' => 0,
+      'panel' => '1',
+      'fixed' => '',
+      'label' => 'Content: Reunion Session (field_reunion_session_ref)',
     ),
   );
   $export['gsb_alumni_agenda_list'] = $view;

@@ -12,5 +12,10 @@ include_once 'gsb_feature_alumni_reunion_agenda_item_display.features.inc';
  * @param type $query
  */
 function gsb_feature_alumni_reunion_agenda_item_display_views_query_alter(&$view, &$query) {
-
+  if ($view->name == 'gsb_alumni_agenda_list'){
+    unset($view->query->where[0]);
+    $node = node_load($view->args[0]);
+    $view->query->where[1]['conditions'][2]['value'] = $node->field_reunion_session_ref['und'][0]['target_id'];
+    $view->query->where[2]['conditions'][0]['value'] = $view->args[0];
+  }
 }
