@@ -22,6 +22,7 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Schedule';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -60,15 +61,15 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_event_date_1']['delta_offset'] = '0';
+  /* Sort criterion: Content: Stanford Event (field_stanford_event) */
+  $handler->display->display_options['sorts']['field_stanford_event_value']['id'] = 'field_stanford_event_value';
+  $handler->display->display_options['sorts']['field_stanford_event_value']['table'] = 'field_data_field_stanford_event';
+  $handler->display->display_options['sorts']['field_stanford_event_value']['field'] = 'field_stanford_event_value';
   /* Sort criterion: Content: Date/Time */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['ui_name'] = 'Content: Date/Time';
-  /* Sort criterion: Content: Stanford Event (field_stanford_event) */
-  $handler->display->display_options['sorts']['field_stanford_event_value']['id'] = 'field_stanford_event_value';
-  $handler->display->display_options['sorts']['field_stanford_event_value']['table'] = 'field_data_field_stanford_event';
-  $handler->display->display_options['sorts']['field_stanford_event_value']['field'] = 'field_stanford_event_value';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
