@@ -38,8 +38,14 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'alumni_reunion_agenda_list';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_event_date|field_event_date_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'alumni_reunion_agenda_list';
   /* Field: Event Date: Date */
   $handler->display->display_options['fields']['field_event_date_1']['id'] = 'field_event_date_1';
   $handler->display->display_options['fields']['field_event_date_1']['table'] = 'field_data_field_event_date';
@@ -48,7 +54,7 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
   $handler->display->display_options['fields']['field_event_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_event_date_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_date_1']['settings'] = array(
-    'format_type' => 'dayname_no_year',
+    'format_type' => 'full_day_month_date_and_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
