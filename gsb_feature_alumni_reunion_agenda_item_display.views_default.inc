@@ -36,7 +36,8 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['more_button_text'] = 'Show More';
-  $handler->display->display_options['pager']['options']['use_go_to_top_link'] = 0;
+  $handler->display->display_options['pager']['options']['use_go_to_top_link'] = 1;
+  $handler->display->display_options['pager']['options']['use_go_to_top_text'] = 'Back to the Top';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
