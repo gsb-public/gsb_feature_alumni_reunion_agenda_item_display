@@ -130,7 +130,7 @@ function gsb_feature_alumni_reunion_agenda_item_display_views_default_views() {
   /* Display: Reunion Schedule */
   $handler = $view->new_display('panel_pane', 'Reunion Schedule', 'panel_pane_1');
   $handler->display->display_options['pane_title'] = 'Reunion Schedule';
-  $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
+  $handler->display->display_options['pane_category']['name'] = 'Customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_reunion_group_page_ref_target_id' => array(
